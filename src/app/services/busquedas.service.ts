@@ -45,6 +45,13 @@ export class BusquedasService {
       user => new Hospital(user.nombre, user._id, user.img, user.usuario) 
     );
   }
+
+  busquedaGlobal( termino: string) {
+
+    const url = `${base_url}/todo/${termino}`;
+    return this.http.get(url, this.headers);
+
+  }
   
 
   buscar(tipo: 'usuarios'|'medicos'|'hospitales',
